@@ -18,7 +18,9 @@ return numList;
 
 // * Variables declaration
 const numToGuess = 5;
-let simonsNumbers = [];
+var simonsNumbers = [];
+var guessedNumbers = [];
+var wrongNumbers = [];
 
 // generate numToGuess random numbers
 simonsNumbers = numGenerator(numToGuess, simonsNumbers);
@@ -27,6 +29,20 @@ simonsNumbers = numGenerator(numToGuess, simonsNumbers);
 
 let alertMessage = "I numeri da indovinare sono: " + simonsNumbers.join(",")
 alert(alertMessage);
+
+setTimeout(function(){
+    for (let i = 0; i < numToGuess; i++){
+        do
+            var userNumber = parseInt(prompt("Inserisci il " + (i+1) + "° numero"));
+        while(!userNumber || isNaN(userNumber));
+        if (simonsNumbers.includes(userNumber)){
+            guessedNumbers.push(userNumber);
+        }
+    }
+    //  * Output alert
+    alert("Hai indovintato " + guessedNumbers.length + " numeri: " + guessedNumbers.join(","));
+}, 3000);
+
 
 
 console.table(simonsNumbers);
