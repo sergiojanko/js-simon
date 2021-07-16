@@ -23,6 +23,10 @@ let simonsNumbers = [];
 // generate numToGuess random numbers
 simonsNumbers = numGenerator(numToGuess, simonsNumbers);
 
+// show alert
+
+let alertMessage = "I numeri da indovinare sono: " + simonsNumbers.join(",")
+alert(alertMessage);
 
 
 console.table(simonsNumbers);
